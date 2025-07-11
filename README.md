@@ -6,18 +6,33 @@ This is a console-based sports management system that allows you to manage teams
 
 Java (JDK 8+) Maven Java (JDK 8+) PostgreSQL JDBC
 
-❤️❤️ Features • Add teams and players. • View teams and their players. • Schedule and view matches.
+❤️❤️ Features
+• Add teams and players.
+• View teams and their players.
+• Schedule and view matches.
 
 Dependancies:
 
 org.junit.jupiter junit-jupiter-api 5.7.1 test
 *Project Directory Structure
 
-SportsManagementSystem/ │ ├── src/ │ ├── Player.java │ ├── Team.java │ ├── Match.java │ ├── Database.java │ └── SportsManagementSystem.java │ ├── lib/
-├── sql/
-└── README.md
+SportManagement/
+├── pom.xml
+└── src/
+    └── main/
+        └── java/
+            └── com/
+                └── sport/
+                    ├── Main.java
+                    ├── model/
+                    │   ├── Player.java
+                    │   └── Team.java
+                    └── service/
+                        └── SportService.java
 
-Prerequisites: before running the project, ensure you have the following installed:
+Prerequisites: 
+
+before running the project, ensure you have the following installed:
 
 1]Java Development Kit (JDK) 17 or higher.
 
@@ -25,11 +40,26 @@ Prerequisites: before running the project, ensure you have the following install
 
 3]create PostgreSQL database with the following table:
 
--- Run in pgAdmin or psql CREATE TABLE teams ( team_id SERIAL PRIMARY KEY, team_name VARCHAR(100) NOT NULL );
+-- Run in pgAdmin or psql
+CREATE TABLE teams (
+team_id SERIAL PRIMARY KEY,
+team_name VARCHAR(100) NOT NULL
+);
 
--- Create the 'players' table CREATE TABLE players ( player_id SERIAL PRIMARY KEY, player_name VARCHAR(100) NOT NULL, player_age INT, team_id INT REFERENCES teams(team_id) );
+-- Create the 'players' 
+table CREATE TABLE players (
+player_id SERIAL PRIMARY KEY, 
+player_name VARCHAR(100) NOT NULL,
+player_age INT,
+team_id INT REFERENCES teams(team_id)
+);
 
--- Create the 'matches' table CREATE TABLE matches ( match_id SERIAL PRIMARY KEY, team1_id INT REFERENCES teams(team_id), team2_id INT REFERENCES teams(team_id), match_date DATE );
+-- Create the 'matches' 
+table CREATE TABLE matches ( 
+match_id SERIAL PRIMARY KEY,
+team1_id INT REFERENCES teams(team_id),
+team2_id INT REFERENCES teams(team_id),
+match_date DATE );
 
 Contact:
 
