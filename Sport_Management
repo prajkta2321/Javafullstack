@@ -36,7 +36,7 @@ class Player {
 
 class Team {
     String teamName;
-    List<Player> players = new ArrayList();
+    List<Player> players = new ArrayList<>();
 
     public Team(String teamName) {
         this.teamName = teamName;
@@ -69,8 +69,8 @@ class Match {
 
 public class SportsManagementSystem {
     static Scanner sc = new Scanner(System.in);
-    static List<Team> teams = new ArrayList();
-    static List<Match> matches = new ArrayList();
+    static List<Team> teams = new ArrayList<>();
+    static List<Match> matches = new ArrayList<>();
 
     public static void main(String[] args) {
         int choice;
