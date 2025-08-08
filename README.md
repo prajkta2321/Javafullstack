@@ -1,36 +1,50 @@
-✨Sports Management System✨
+# ✨Sports Management System✨
 
 This is a console-based sports management system that allows you to manage teams, players, and matches, and written in Core Java using JDBC and PostgreSQL.
 
-💻 Technologies Used:
+# 💻 Technologies Used:
 
 Java (JDK 8+) Maven Java (JDK 8+) PostgreSQL JDBC
 
-❤️❤️ Features
+# ❤️❤️ Features
 • Add teams and players.
+
 • View teams and their players.
+
 • Schedule and view matches.
 
-Dependancies:
+ # Dependancies:
 
 org.junit.jupiter junit-jupiter-api 5.7.1 test
-*Project Directory Structure
+
+# *Project Directory Structure
 
 SportManagement/
 ├── pom.xml
+
 └── src/
+
     └── main/
+    
         └── java/
+        
             └── com/
+            
                 └── sport/
+                
                     ├── Main.java
+                    
                     ├── model/
+                    
                     │   ├── Player.java
+                    
                     │   └── Team.java
+                    
                     └── service/
+                    
                         └── SportService.java
 
-Prerequisites: 
+# Prerequisites: 
 
 before running the project, ensure you have the following installed:
 
@@ -41,24 +55,38 @@ before running the project, ensure you have the following installed:
 3]create PostgreSQL database with the following table:
 
 -- Run in pgAdmin or psql
+
 CREATE TABLE teams (
+
 team_id SERIAL PRIMARY KEY,
+
 team_name VARCHAR(100) NOT NULL
+
 );
 
 -- Create the 'players' 
 table CREATE TABLE players (
+
 player_id SERIAL PRIMARY KEY, 
+
 player_name VARCHAR(100) NOT NULL,
+
 player_age INT,
+
 team_id INT REFERENCES teams(team_id)
+
 );
 
 -- Create the 'matches' 
+
 table CREATE TABLE matches ( 
+
 match_id SERIAL PRIMARY KEY,
+
 team1_id INT REFERENCES teams(team_id),
+
 team2_id INT REFERENCES teams(team_id),
+
 match_date DATE );
 
 Contact:
